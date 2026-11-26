@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Yearly_Premium__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF (
+  ISPICKVAL (Sub_Type__c, &apos;Term Plan&apos;),
+  100,
+  IF (
+    ISPICKVAL (Sub_Type__c, &apos;Unit Linked Insurance Plan&apos;),
+    130,
+    IF (ISPICKVAL (Sub_Type__c, &apos;Third Party Insurance&apos;), 75, 50)
+  )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Yearly Premium</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

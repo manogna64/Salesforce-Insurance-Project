@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_Format</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT (CONTAINS (Email, &quot;@gmail.com&quot;))</errorConditionFormula>
+    <errorDisplayField>Email</errorDisplayField>
+    <errorMessage>Invalid email format (example: name@gmail.com)</errorMessage>
+</ValidationRule>

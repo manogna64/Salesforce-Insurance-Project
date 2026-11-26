@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Surrendered_Policy</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+  ISPICKVAL (PRIORVALUE (Status__c), &apos;Surrendered&apos;),
+  OR (
+    ISCHANGED (Name),
+    ISCHANGED (Status__c),
+    ISCHANGED (Surrendered_Date__c),
+    ISCHANGED (Sub_Type__c),
+    ISCHANGED (Insurance_Number__c),
+    ISCHANGED (Insurance_Type__c),
+    ISCHANGED (Insurance_Period__c)
+  )
+)</errorConditionFormula>
+    <errorDisplayField>Surrendered_Date__c</errorDisplayField>
+    <errorMessage>invalid</errorMessage>
+</ValidationRule>

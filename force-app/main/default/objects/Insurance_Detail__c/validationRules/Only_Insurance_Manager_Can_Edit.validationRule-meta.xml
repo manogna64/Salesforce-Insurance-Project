@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Only_Insurance_Manager_Can_Edit</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    NOT(ISNEW()),
+    $UserRole.Name &lt;&gt; &quot;Insurance Manager&quot;
+)</errorConditionFormula>
+    <errorMessage>Only users with the Insurance Manager role can edit insurance records.</errorMessage>
+</ValidationRule>
